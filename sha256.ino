@@ -4,6 +4,8 @@ int start = 0;
 int seconds = 0;
 uint8_t hash[32];
 String pin;
+String str_test ;
+String sha ;
 #define SHA256_BLOCK_SIZE 32
 
 typedef struct {
@@ -187,5 +189,11 @@ void setup()
 
 void loop()
 {
+  str_test = "xyz";
+  sha = SHA256(str_test);
+  Serial.println(sha);
 
+  str_test = "";
+  sha = SHA256(str_test);
+  Serial.println(sha);
 }
